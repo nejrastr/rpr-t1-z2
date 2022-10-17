@@ -1,5 +1,25 @@
+import java.util.Scanner;
+
 public class Main {
+    static int sumaCifara(int n){
+        int suma=0;
+        while(n!=0){
+            suma=suma+n%10;
+            n/=10;
+        }
+        return suma;
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        int n;
+        Scanner ucitaj=new Scanner(System.in);
+        System.out.println("Unesite n: ");
+        n=ucitaj.nextInt();
+
+        for(int i=1; i<n; i++){
+            if(i%sumaCifara(i)==0)
+                System.out.println(i);
+        }
     }
 }
